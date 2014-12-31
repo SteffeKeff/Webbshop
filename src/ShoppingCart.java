@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
 
-public class ShoppingCart
+
+public abstract class ShoppingCart
 {
-	Item[] items = new Item[10];
+	List<Item> items = new ArrayList<Item>();
 	
 	public void addItem(Item addThis){
 		
@@ -11,7 +14,7 @@ public class ShoppingCart
 		
 	}
 	
-	public Item[] getItems(){
+	public List<Item> getItems(){
 		return items;
 	}
 	
