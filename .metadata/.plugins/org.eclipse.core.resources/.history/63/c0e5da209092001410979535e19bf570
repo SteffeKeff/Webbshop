@@ -2,7 +2,8 @@
 public class Account {
 	
 	private final String username;
-	private String password,email;
+	private String password;
+	private String email;
 	private boolean loginStatus = false;
 	
 	public Account(String username, String password, String email){
