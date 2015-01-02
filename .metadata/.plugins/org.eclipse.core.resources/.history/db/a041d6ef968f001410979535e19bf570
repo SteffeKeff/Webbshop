@@ -1,0 +1,15 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Authentication a = new Authentication();
+		
+		a.addAdmin("Steffe", "Keff", "Mail");
+		a.addAdmin("Steffe2", "Keff", "Mail");
+		
+		System.out.println(a.accounts.toString());
+		System.out.println(a.accounts.toString().contentEquals("Steffe"));
+
+	}
+
+}

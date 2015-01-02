@@ -1,0 +1,17 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class AdminTest {
+
+	@Test
+	public void test() {
+		Admin steffe = new Admin("Steffe","Keff","email");
+		assertEquals(steffe.getUsername(), "Steffe");
+		assertNotEquals(steffe.getUsername(), "teffe");
+		assertEquals(steffe.getPassword(), "Keff");
+		assertEquals(steffe.getEmail(), "email");
+	}
+
+}

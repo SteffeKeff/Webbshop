@@ -1,0 +1,21 @@
+import java.util.HashSet;
+
+
+public final class Authentication {
+	public HashSet<Account> accounts = new HashSet<Account>();
+	
+	public void addCustomer(String username, String password, String email){
+		accounts.add(new Admin(username,password,email));
+	}
+	
+	public void addAdmin(String username, String password, String email){
+		accounts.add(new Admin(username,password,email));
+	}
+	
+	public boolean login(String username, String password){
+		if(accounts.contains(new Admin(username,password,"mail"))){
+			return true;
+		}
+		return false;
+	}
+}

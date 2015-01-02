@@ -1,0 +1,21 @@
+import java.util.HashMap;
+
+
+public final class Authentication {
+	
+	public HashMap<String, Account> accounts = new HashMap<String, Account>();
+	
+	public void addCustomer(String username, String password, String email){
+		if(accounts.getOrDefault(username,null)!=null){
+			accounts.put(username, new Admin(username, password, email));
+		}
+	}
+	
+	public void addAdmin(String username, String password, String email){
+		accounts.put(username, new Admin(username, password, email));
+	}
+	
+	public Account getAccount(String username){
+		return accounts.getOrDefault(username, null);
+	}
+}

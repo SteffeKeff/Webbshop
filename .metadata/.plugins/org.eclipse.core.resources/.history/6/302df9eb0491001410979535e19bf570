@@ -1,0 +1,6 @@
+
+public final class Admin extends Account {
+	public Admin(String password, String email){
+		super(password,email);
+	}
+}

@@ -1,0 +1,18 @@
+import java.util.HashSet;
+
+
+public final class Authentication {
+	private HashSet<Account> accounts = new HashSet<Account>();
+	
+	public void addCustomer(String username, String password, String email){
+		accounts.add(new Admin(username,password,email));
+	}
+	
+	public void addAdmin(String username, String password, String email){
+		accounts.add(new Admin(username,password,email));
+	}
+	
+	public Account[] getAccounts(){
+		return (Account[]) accounts.toArray();
+	}
+}

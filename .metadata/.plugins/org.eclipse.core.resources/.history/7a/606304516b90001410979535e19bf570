@@ -1,0 +1,17 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class AuthenticationTest {
+
+	@Test
+	public void test() {
+		Authentication a = new Authentication();
+		a.addCustomer("Steffe", "keff", "mail");
+//		assertTrue(a.login("Steffe","keff"));
+//		assertFalse(a.login("Be","Oz"));
+//		assertFalse(a.login("Steffe","Keff"));
+	}
+
+}

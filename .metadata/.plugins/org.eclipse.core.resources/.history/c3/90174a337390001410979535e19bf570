@@ -1,0 +1,33 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class AuthenticationTest {
+	
+	Authentication a = new Authentication();
+	
+	@Test
+	public void test() {
+		a.addCustomer("Steffe", "keff", "mail");
+		a.addCustomer("Steffe","keff","MAIL");
+		a.addCustomer("Erik","Welander","eriksMail");
+		assertNull(a.getAccount("Stefe"));
+		assertEquals(a.getAccount("Steffe").getEmail(),"mail");
+		
+	}
+	
+	@Test
+	public void testMail(){
+		a.addCustomer("Steffe", "keff", "mail");
+		a.addCustomer("Steffe","keff","MAIL");
+		a.addCustomer("Erik","Welander","eriksMail");
+		a.getAccount("Steffe").setEmail("sdgkeff@gmail.com");
+		
+		
+		assertEquals(a.getAccount("Steffe").getEmail(),"sdgkeff@gmail.com");
+		assertNotEquals(a.getAccount("Erik"),"sdgkeff@gmail.com");
+	}
+	
+
+}
