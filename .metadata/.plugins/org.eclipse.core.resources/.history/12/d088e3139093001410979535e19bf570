@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.List;
 
 public interface ShoppingCartRepository {
 	
@@ -6,12 +6,12 @@ public interface ShoppingCartRepository {
 	
 	public Item getItem(String itemName);
 	
-	public HashMap<String,Item> getItems();
+	public List<Item> getItems();
 	
 	public void removeItem(Item removeThis);
 	
 	public int getSum();
 	
-	public void updateItem(String itemName, Item updateThis);
+	public void updateItem(Item updateThis);
 	
 }

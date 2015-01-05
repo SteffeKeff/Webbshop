@@ -12,6 +12,6 @@ public interface ShoppingCartRepository {
 	
 	public int getSum();
 	
-	public void updateItem(String itemName, Item updateThis);
+	public void updateItem(Item updateThis);
 	
 }

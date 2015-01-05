@@ -1,0 +1,78 @@
+import java.util.HashMap;
+import java.util.List;
+
+
+public class ShopService implements ShoppingCartRepository, AccountRepository{
+	
+	private HashMap<String, Account> accounts = new HashMap<String, Account>();
+	private HashMap<String, Item> items = new HashMap<String, Item>();
+	
+	@Override
+	public void addItem(Item addThis){
+		if(!items.containsKey(addThis)){
+			items.put(addThis.title, addThis);
+		}
+	}
+
+	@Override
+	public void addCustomer(String username, String password, String email) {
+		if(!accounts.containsKey(username)){
+			accounts.put(username, new Admin(username, password, email));
+		}
+	}
+
+	@Override
+	public void addAdmin(String username, String password, String email) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Account getAccount(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateAccount(String username, String password, String email) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeAccount(String username) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Item getItem(String itemName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> getItems() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeItem(Item removeThis) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getSum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void updateItem(Item updateThis) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
