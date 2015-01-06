@@ -4,10 +4,10 @@ import java.util.List;
 
 public abstract class ShoppingCart
 {
-	List<Item> items = new ArrayList<Item>();
+	private List<Item> items = new ArrayList<Item>();
 	
 	public void addItem(Item addThis){
-		
+		items.add(addThis);
 	}
 	
 	public void removeItem(Item removeThis){
@@ -20,6 +20,9 @@ public abstract class ShoppingCart
 	
 	public int getSum(){
 		int sum = 0;
+		for(Item item: items){
+			sum += items.getPrice();
+		}
 		return sum;
 	}
 	
