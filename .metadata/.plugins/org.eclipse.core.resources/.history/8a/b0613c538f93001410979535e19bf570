@@ -1,0 +1,8 @@
+import java.util.HashMap;
+
+
+public class ShopService implements ShoppingCartRepository, AccountRepository{
+	
+	private HashMap<String, Account> accounts = new HashMap<String, Account>();
+	
+}
