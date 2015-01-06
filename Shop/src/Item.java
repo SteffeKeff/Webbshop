@@ -1,11 +1,30 @@
 
-public abstract class Item
+public class Item
 {
 	private String title, category, manufacturer, model, description, img;
 	private int price, quantity = 0;
 	
 	// All of the 'Setters'
 	//
+	
+	public Item(String category, 
+					 String title, 
+					 String manufacturer, 
+					 String model, 
+					 String description, 
+					 String img, 
+					 int price, 
+					 int quantity)
+	{
+		this.title = title;
+		this.category = category;
+		this.manufacturer = manufacturer;
+		this.model = model;
+		this.description = description;
+		this.img = img;
+		this.price = price;
+		this.quantity = quantity;
+	}
 	
 	public void setTitle(String title){
 		this.title = title;
