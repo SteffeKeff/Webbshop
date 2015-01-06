@@ -4,7 +4,7 @@ import java.util.HashMap;
 public class ShopService implements ProductRepository, AccountRepository{
 	
 	private HashMap<String, Account> accounts = new HashMap<String, Account>();
-	private HashMap<String, Item> products = new HashMap<String, Item>();
+	private HashMap<String, Item> items = new HashMap<String, Item>();
 	
 	@Override
 	public void addCustomer(String username, String password, String email) {
@@ -38,35 +38,35 @@ public class ShopService implements ProductRepository, AccountRepository{
 	
 	@Override
 	public void addItem(Item addThis){
-		if(!products.containsKey(addThis)){
-			products.put(addThis.title, addThis);
+		if(!items.containsKey(addThis)){
+			items.put(addThis.title, addThis);
 		}
 	}
 
 	@Override
 	public Item getItem(String itemName) {
-		return products.getOrDefault(itemName,null);
+		return items.getOrDefault(itemName,null);
 	}
 
 	@Override
 	public HashMap<String,Item> getItems() {
-		return products;
+		return items;
 	}
 
 	@Override
 	public void removeItem(Item removeThis) {
-		products.remove(removeThis);
+		items.remove(removeThis);
 	}
 
 	@Override
 	public int getSum() {
 		//Returnerar totala summan för varorna i kundvagnen.
-		return products.values().iterator().next().price;
+		return items.values().iterator().next().price;
 	}
 
 	@Override
 	public void updateItem(String itemName, Item updateThis) {
-		products.replace(itemName, updateThis);
+		items.replace(itemName, updateThis);
 	}
 	
 }
