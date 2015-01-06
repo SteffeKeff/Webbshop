@@ -27,12 +27,12 @@ public class ShoppingCart
 	
 	@Override
 	public String toString(){
-		String str;
+		String str = "";
 		for(Item item: items){
 			str.concat(item.getTitle());
 			str.concat(", ");
 		};
-		str.concat(". With the sum of: " + sum);
+		str.concat(". With the sum of: " + getSum());
 		
 		return str;
 	}

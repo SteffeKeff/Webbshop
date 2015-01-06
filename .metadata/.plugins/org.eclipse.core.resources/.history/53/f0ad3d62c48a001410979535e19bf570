@@ -1,6 +1,0 @@
-import java.util.HashSet;
-
-
-public final class Authentication {
-	private HashSet<Account> accounts = new HashSet<Account>();
-}
