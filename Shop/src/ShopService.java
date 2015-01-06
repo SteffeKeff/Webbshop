@@ -39,7 +39,7 @@ public class ShopService implements ProductRepository, AccountRepository{
 	@Override
 	public void addItem(Item addThis){
 		if(!products.containsKey(addThis)){
-			products.put(addThis.title, addThis);
+			products.put(addThis.getTitle(), addThis);
 		}
 	}
 
@@ -61,7 +61,7 @@ public class ShopService implements ProductRepository, AccountRepository{
 	@Override
 	public int getSum() {
 		//Returnerar totala summan för varorna i kundvagnen.
-		return products.values().iterator().next().price;
+		return products.values().iterator().next().getPrice();
 	}
 
 	@Override

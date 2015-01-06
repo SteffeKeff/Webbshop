@@ -7,7 +7,6 @@ public abstract class Item
 	// All of the 'Setters'
 	//
 	
-	@Override
 	public void setTitle(String title){
 		this.title = title;
 	}
@@ -32,11 +31,11 @@ public abstract class Item
 		this.img = img;
 	}
 	
-	public int setPrice(int price){
+	public void setPrice(int price){
 		this.price = price;
 	}
 	
-	public int setQuantity(int quantity){
+	public void setQuantity(int quantity){
 		this.quantity = quantity;
 	}
 	
@@ -46,6 +45,10 @@ public abstract class Item
 	@Override
 	public String toString(){
 		return title + ": " + manufacturer + " " + model;
+	}
+	
+	public String getTitle(){
+		return title; 
 	}
 	
 	public String getCat(){

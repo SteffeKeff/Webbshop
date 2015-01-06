@@ -21,7 +21,7 @@ public abstract class ShoppingCart
 	public int getSum(){
 		int sum = 0;
 		for(Item item: items){
-			sum += items.getPrice();
+			sum += item.getPrice();
 		}
 		return sum;
 	}
