@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.List;
 
 
 public abstract class ShoppingCart
 {
-	private List<Item> items = new ArrayList<Item>();
+	private ArrayList<Item> items = new ArrayList<Item>();
 	
 	public void addItem(Item addThis){
 		items.add(addThis);
@@ -14,7 +13,7 @@ public abstract class ShoppingCart
 		
 	}
 	
-	public List<Item> getItems(){
+	public ArrayList<Item> getItems(){
 		return items;
 	}
 	

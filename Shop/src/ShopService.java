@@ -1,11 +1,12 @@
 import java.util.HashMap;
 
 
-public class ShopService implements ProductRepository, AccountRepository{
+public class ShopService implements ProductRepository, AccountRepository, OrderRepository{
 	
 	private HashMap<String, Account> accounts = new HashMap<String, Account>();
 	private HashMap<String, Item> products = new HashMap<String, Item>();
-	
+	private HashMap<String, Order> orders = new HashMap<String, Order>();
+	 
 	@Override
 	public void addCustomer(String username, String password, String email) {
 		if(!accounts.containsKey(username)){
@@ -67,6 +68,21 @@ public class ShopService implements ProductRepository, AccountRepository{
 	@Override
 	public void updateItem(String itemName, Item updateThis) {
 		products.replace(itemName, updateThis);
+	}
+
+	@Override
+	public void addOrder(Customer customer) {
+		orders.put(customer.getUsername().concat(new Integer(customer.getOrders().size()).toString()), new Order(customer.getUsername(),customer.getShoppingCart()));
+	}
+
+	@Override
+	public Order getOrder(String key) {
+		return orders.getOrDefault(key, null);
+	}
+
+	@Override
+	public HashMap<String, Order> getAllOrders() {
+		return orders;
 	}
 	
 }
