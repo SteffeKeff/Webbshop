@@ -1,5 +1,5 @@
 
-public abstract class Item
+public class Item
 {
 	private String title, category, manufacturer, model, description, img;
 	private int price, quantity = 0;
@@ -7,7 +7,7 @@ public abstract class Item
 	// All of the 'Setters'
 	//
 	
-	public void Item(String category, 
+	public Item(String category, 
 					 String title, 
 					 String manufacturer, 
 					 String model, 

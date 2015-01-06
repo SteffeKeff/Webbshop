@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class ShoppingCart
+public class ShoppingCart
 {
 	private List<Item> items = new ArrayList<Item>();
 	
@@ -28,6 +28,13 @@ public abstract class ShoppingCart
 	
 	@Override
 	public String toString(){
-		return "";
+		String str;
+		for(Item item: items){
+			str.concat(item.getTitle());
+			str.concat(", ");
+		};
+		str.concat(". With the sum of: " + sum);
+		
+		return str;
 	}
 }
