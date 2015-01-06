@@ -1,5 +1,10 @@
 /bin/
+<<<<<<< HEAD
 
 # eclipse specific git ignore
 .project
 .metadata
+=======
+/.metadata/
+/.recommenders/
+>>>>>>> 779214d10d8f7779d6e876769ea5da59aebced81
