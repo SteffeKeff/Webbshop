@@ -4,6 +4,9 @@
 # eclipse specific git ignore
 .project
 .metadata
+.snap
+.resources
+.xmi
 =======
 /.metadata/
 /.recommenders/
