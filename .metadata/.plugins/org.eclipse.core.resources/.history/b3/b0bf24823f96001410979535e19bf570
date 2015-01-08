@@ -1,0 +1,19 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class CustomerTest {
+
+	@Before
+	public void setUp(){
+		Customer c = new Customer("Steffe", "Keff", "email", "Stefan", "De Geer", "Sommarbo 228", "0768646474");
+	}
+
+	@Test
+	public void testConstructor() {
+		assertEqual(c.getUserName(),"Steffe");
+	}
+
+}

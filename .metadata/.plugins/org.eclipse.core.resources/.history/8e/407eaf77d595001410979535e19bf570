@@ -1,0 +1,16 @@
+
+public interface AccountRepository {
+	
+	public void addCustomer(String username, String password, String email, String firstName, String lastName, String address, String mobileNumber);
+	
+	public void addAdmin(String username, String password, String email);
+	
+	public Account getAccount(String username);
+	
+	public void updateAdmin(String username, String password, String email);
+	
+	public void updateCustomer(String username, String password, String email, String firstName, String lastName, String address, String mobileNumber);
+	
+	public void removeAccount(String username);
+	
+}
