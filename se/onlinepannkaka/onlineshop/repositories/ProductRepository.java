@@ -14,6 +14,6 @@ public interface ProductRepository
 	
 	public void removeProduct(String title);
 	
-	public void updateProduct(String title, Product product);
+	public void updateProduct(Product product);
 	
 }

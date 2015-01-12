@@ -18,10 +18,7 @@ public class ShoppingCart
 	
 	public ArrayList<Product> getProducts()
 	{
-		if(!products.isEmpty()){
 			return products;
-		}
-		return null;
 	}
 	
 	public int getSum()

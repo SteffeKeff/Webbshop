@@ -33,11 +33,16 @@ public class ShopService
 	}
 	
 	public void removeProduct(String title){
+		Product p = pR.getProduct(title);
+		for(Customer c : cR.getCustomers().values())
+		{
+			c.removeProduct(p);
+		}
 		pR.removeProduct(title);
 	}	
 	
-	public void updateProduct(String title, Product product){
-		pR.updateProduct(title, product);
+	public void updateProduct(Product product){
+		pR.updateProduct(product);
 	}
 	
 	public void addCustomer(Customer customer){

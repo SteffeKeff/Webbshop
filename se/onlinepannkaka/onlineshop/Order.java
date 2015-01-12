@@ -37,11 +37,6 @@ public final class Order
 		return dateShipped;
 	}
 
-	public void setDateShipped(Date dateShipped) 
-	{
-		this.dateShipped = dateShipped;
-	}
-
 	public String getUserName() 
 	{
 		return userName;

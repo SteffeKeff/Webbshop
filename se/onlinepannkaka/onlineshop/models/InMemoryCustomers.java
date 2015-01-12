@@ -25,6 +25,12 @@ public class InMemoryCustomers implements CustomerRepository
 	}
 	
 	@Override
+	 public HashMap<String, Customer> getCustomers() 
+	 {
+		return accounts;
+	 }
+	
+	@Override
 	public void updateCustomer(Customer customer) 
 	{
 		accounts.replace(customer.getUsername(), customer);

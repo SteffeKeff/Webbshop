@@ -8,5 +8,5 @@ public interface OrderRepository
 {
     public void addOrder(Customer customer);
     public Order getOrder(String key);
-    public HashMap<String,Order> getAllOrders();    
+    public HashMap<String,Order> getAllOrders();
 }

@@ -37,8 +37,8 @@ public class InMemoryProducts implements ProductRepository
 	}
 
 	@Override
-	public void updateProduct(String title, Product product) 
+	public void updateProduct(Product product) 
 	{
-		products.replace(title, product);
+		products.replace(product.getTitle(), product);
 	}
 }
