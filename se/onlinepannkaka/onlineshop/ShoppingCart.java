@@ -21,11 +21,11 @@ public class ShoppingCart
 			return products;
 	}
 	
-	public int getSum()
+	public double getSum()
 	{
-		int sum = 0;
+		double sum = 0;
 		for(Product product: products){
-			sum += product.getPrice();
+			sum += (double) product.getPrice();
 		}
 		return sum;
 	}
