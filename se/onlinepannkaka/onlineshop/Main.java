@@ -1,5 +1,4 @@
 package se.onlinepannkaka.onlineshop;
-import java.util.Date;
  
 import se.onlinepannkaka.onlineshop.models.InMemoryCustomers;
 import se.onlinepannkaka.onlineshop.models.InMemoryOrders;
@@ -15,11 +14,11 @@ public class Main
                 ShopService ss = new ShopService(new InMemoryCustomers(),new InMemoryProducts(), new InMemoryOrders());
  
                 ss.addCustomer(new Customer("Steffe", "Keff", "sdgkeff@gmail.com", "Stefan", "De Geer", "Sommarbo 228", "0768646474"));
-                ss.addCustomer(new Customer("Be", "oz", "beoz@hotmail.com", "be", "oz", "Nynäsvägen 1", "070123456789"));
+                ss.addCustomer(new Customer("Be", "oz", "beoz@hotmail.com", "be", "oz", "Nynï¿½svï¿½gen 1", "070123456789"));
                
-                ss.addProduct(new Product("Klassisk pannkaka", "Pannkakor" , "Stefan", "Vår klassiska och mycket utsökta pannkaka", "klassiskPannkaka.png", 10.90, 60));
-                ss.addProduct(new Product("Amerikansk pannkaka", "Pannkakor" , "Erik", "En tjockare variant än den klassiska pannkakan men otroligt god och passar till sirap", "amerikanskPannkaka.png", 13.90, 40));
-                ss.addProduct(new Product("Belgisk våffla", "Våfflor", "Osama", "Den belgiska våfflan är lite tjock och mycket frasig", "belgiskVaffla.png", 12.90, 50));
+                ss.addProduct(new Product("Klassisk pannkaka", "Pannkakor" , "Stefan", "Vï¿½r klassiska och mycket utsï¿½kta pannkaka", "klassiskPannkaka.png", 10.90, 60));
+                ss.addProduct(new Product("Amerikansk pannkaka", "Pannkakor" , "Erik", "En tjockare variant ï¿½n den klassiska pannkakan men otroligt god och passar till sirap", "amerikanskPannkaka.png", 13.90, 40));
+                ss.addProduct(new Product("Belgisk vï¿½ffla", "Vï¿½fflor", "Osama", "Den belgiska vï¿½fflan ï¿½r lite tjock och mycket frasig", "belgiskVaffla.png", 12.90, 50));
                 System.out.println(ss.getProducts());
                
                 System.out.println();
@@ -27,7 +26,7 @@ public class Main
                 ss.getCustomer("Steffe").addProduct(ss.getProduct("Klassisk pannkaka"));
                 System.out.println("Varukorg2: " + ss.getCustomer("Steffe").getShoppingCart());
  
-                ss.getCustomer("Be").addProduct(ss.getProduct("Belgisk våffla"));
+                ss.getCustomer("Be").addProduct(ss.getProduct("Belgisk vï¿½ffla"));
                
                 System.out.println();
                 System.out.println(ss.getCustomer("Be").getShoppingCart());

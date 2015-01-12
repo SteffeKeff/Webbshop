@@ -60,7 +60,7 @@ public final class Customer extends Account
     
     public void addOrder()
     {
-    	if(shoppingCart.getProducts()!=null){
+    	if(!shoppingCart.getProducts().isEmpty()){
     		orders.add(new Order(super.getUsername(), shoppingCart.getProducts()));
             shoppingCart.clear();
     	}

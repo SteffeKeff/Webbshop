@@ -3,7 +3,6 @@ package se.onlinepannkaka.onlineshop;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 
 import org.junit.Test;
@@ -23,7 +22,7 @@ public class MainTest
 		assertNotNull(ss);
 		
 		Customer c1 = new Customer("Steffe", "Keff", "sdgkeff@gmail.com", "Stefan", "De Geer", "Sommarbo 228", "0768646474");
-		Customer c2 = new Customer("Be", "oz", "beoz@hotmail.com", "be", "oz", "Nynäsvägen 1", "070123456789");
+		Customer c2 = new Customer("Be", "oz", "beoz@hotmail.com", "be", "oz", "Nynï¿½svï¿½gen 1", "070123456789");
 		
 		ss.addCustomer(c1);
 		ss.addCustomer(c2);
@@ -31,9 +30,9 @@ public class MainTest
 		assertEquals(c1, ss.getCustomer("Steffe"));
 		assertEquals(c2, ss.getCustomer("Be"));
 		
-		Product p1 = new Product("Klassisk pannkaka", "Pannkakor" , "Stefan", "Vår klassiska och mycket utsökta pannkaka", "klassiskPannkaka.png", 10.90, 60);
+		Product p1 = new Product("Klassisk pannkaka", "Pannkakor" , "Stefan", "Vï¿½r klassiska och mycket utsï¿½kta pannkaka", "klassiskPannkaka.png", 10.90, 60);
 		Product p2 = new Product("Amerikansk pannkaka", "Pannkakor" , "Erik", "En lite tjockare men mycket god pannkaka som passar till sirap", "amerikanskPannkaka.png", 13.90, 40);
-		Product p3 = new Product("Belgisk våffla", "Våfflor", "Osama", "Den belgiska våfflan är lite tjock och mycket frasig", "belgiskVaffla.png", 12.90, 50);
+		Product p3 = new Product("Belgisk vï¿½ffla", "Vï¿½fflor", "Osama", "Den belgiska vï¿½fflan ï¿½r lite tjock och mycket frasig", "belgiskVaffla.png", 12.90, 50);
 		
 		ss.addProduct(p1);
 		ss.addProduct(p2);
@@ -41,7 +40,7 @@ public class MainTest
 		
 		assertEquals(p1, ss.getProduct("Klassisk pannkaka"));
 		assertEquals(p2, ss.getProduct("Amerikansk pannkaka"));
-		assertEquals(p3, ss.getProduct("Belgisk våffla"));
+		assertEquals(p3, ss.getProduct("Belgisk vï¿½ffla"));
 		assertEquals(3, ss.getProducts().size());
 		
 		assertEquals(0, ss.getCustomer("Steffe").getShoppingCart().size());
