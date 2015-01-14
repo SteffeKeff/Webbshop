@@ -1,4 +1,4 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.tests;
 
 import static org.junit.Assert.*;
 
@@ -7,9 +7,13 @@ import java.util.HashMap;
 
 import org.junit.Test;
 
+import se.onlinepannkaka.onlineshop.ShopService;
+import se.onlinepannkaka.onlineshop.models.Customer;
 import se.onlinepannkaka.onlineshop.models.InMemoryCustomers;
 import se.onlinepannkaka.onlineshop.models.InMemoryOrders;
 import se.onlinepannkaka.onlineshop.models.InMemoryProducts;
+import se.onlinepannkaka.onlineshop.models.Order;
+import se.onlinepannkaka.onlineshop.models.Product;
 
 public class MainTest 
 {
@@ -44,24 +48,24 @@ public class MainTest
 		assertEquals(3, ss.getProducts().size());
 		
 		assertEquals(0, ss.getCustomer("Steffe").getShoppingCart().size());
-		ss.getCustomer("Steffe").addProduct(p1);
-		ss.getCustomer("Steffe").addProduct(p2);
-		ss.getCustomer("Steffe").addProduct(p3);
+		ss.getCustomer("Steffe").addProduct(p1.getTitle());
+		ss.getCustomer("Steffe").addProduct(p2.getTitle());
+		ss.getCustomer("Steffe").addProduct(p3.getTitle());
 		assertEquals(3, ss.getCustomer("Steffe").getShoppingCart().size());
 		
-		assertEquals(ss.getCustomer("Steffe").getShoppingCart().get(0), p1);
-		assertEquals(ss.getCustomer("Steffe").getShoppingCart().get(1), p2);
-		assertEquals(ss.getCustomer("Steffe").getShoppingCart().get(2), p3);
+		assertEquals(ss.getCustomer("Steffe").getShoppingCart().get(0), p1.getTitle());
+		assertEquals(ss.getCustomer("Steffe").getShoppingCart().get(1), p2.getTitle());
+		assertEquals(ss.getCustomer("Steffe").getShoppingCart().get(2), p3.getTitle());
 		
-		assertEquals(ss.getAllOrders(), new HashMap<String,Order>());
+		assertEquals(ss.getOrders(), new HashMap<String,Order>());
 		
 		ss.addOrder("Steffe");
 		ss.getCustomer("Steffe").getOrder(0).shipIt();
-		assertEquals(1, ss.getAllOrders().size());
+		assertEquals(1, ss.getOrders().size());
 		assertEquals(1, ss.getCustomer("Steffe").getOrders().size());
 		assertEquals(0, ss.getCustomer("Steffe").getShoppingCart().size());
 		
-		ss.getCustomer("Steffe").addProduct(p1);
+		ss.getCustomer("Steffe").addProduct(p1.getTitle());
 		ss.removeProduct("Klassisk pannkaka");
 		
 		assertEquals(new ArrayList<Product>(), ss.getCustomer("Steffe").getShoppingCart());

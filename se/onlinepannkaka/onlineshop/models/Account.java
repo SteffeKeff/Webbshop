@@ -1,4 +1,4 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.models;
 
 public class Account 
 {

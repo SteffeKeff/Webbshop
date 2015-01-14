@@ -1,9 +1,13 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.tests;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
 import org.junit.Test;
+
+import se.onlinepannkaka.onlineshop.models.Customer;
+import se.onlinepannkaka.onlineshop.models.Order;
+import se.onlinepannkaka.onlineshop.models.Product;
 
 
 public class CustomerTest 
@@ -53,19 +57,19 @@ public class CustomerTest
 		assertEquals(cu.getOrders(), new ArrayList<Order>());
 		
 		Product p1 = new Product("Klassisk pannkaka", "Pannkakor" , "Stefan", "Vår klassiska och mycket utsökta pannkaka", "klassiskPannkaka.png", 10.90, 10);		
-		cu.addProduct(p1);
+		cu.addProduct(p1.getTitle());
 		
-		ArrayList<Product> pa = cu.getShoppingCart();
-		assertEquals(pa.get(0), p1);
+		ArrayList<String> pa = cu.getShoppingCart();
+		assertEquals(pa.get(0), p1.getTitle());
 		assertEquals(pa.size(), 1);
 		
 		Product p2 = new Product("Amerikansk pannkaka", "Pannkakor" , "Erik", "En lite tjockare men mycket god pannkaka som passar till sirap", "amerikanskPannkaka.png", 13.90, 10);
-		cu.addProduct(p2);
+		cu.addProduct(p2.getTitle());
 		
-		assertEquals(pa.get(1), p2);
+		assertEquals(pa.get(1), p2.getTitle());
 		assertEquals(pa.size(), 2);
 		
-		cu.removeProduct(p2);
+		cu.removeProduct(p2.getTitle());
 		assertEquals(pa.size(), 1);
 		
 		cu.addOrder();

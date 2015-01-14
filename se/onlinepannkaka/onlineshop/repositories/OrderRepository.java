@@ -1,12 +1,12 @@
 package se.onlinepannkaka.onlineshop.repositories;
 import java.util.HashMap;
 
-import se.onlinepannkaka.onlineshop.Customer;
-import se.onlinepannkaka.onlineshop.Order;
+import se.onlinepannkaka.onlineshop.models.Customer;
+import se.onlinepannkaka.onlineshop.models.Order;
 
 public interface OrderRepository
 {
     public void addOrder(Customer customer);
     public Order getOrder(String key);
-    public HashMap<String,Order> getAllOrders();
+    public HashMap<String,Order> getOrders();
 }

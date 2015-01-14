@@ -1,7 +1,6 @@
 package se.onlinepannkaka.onlineshop.models;
 import java.util.HashMap;
 
-import se.onlinepannkaka.onlineshop.Customer;
 import se.onlinepannkaka.onlineshop.repositories.CustomerRepository;
 
 public class InMemoryCustomers implements CustomerRepository 

@@ -1,7 +1,9 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.tests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import se.onlinepannkaka.onlineshop.models.Account;
 
 
 public class AccountTest 

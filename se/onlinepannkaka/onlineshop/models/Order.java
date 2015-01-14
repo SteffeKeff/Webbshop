@@ -1,4 +1,4 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.models;
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -7,13 +7,13 @@ public final class Order
     private final String userName;
 
 	private Date dateCreated, dateShipped = null;
-    private ArrayList<Product> products = new ArrayList<Product>();
+    private ArrayList<String> products = new ArrayList<String>();
     
     @SuppressWarnings("unchecked") //För att kunna göra en kloning av shoppingcart
-	public Order(String userName, ArrayList<Product> shoppingCart)
+	public Order(String userName, ArrayList<String> shoppingCart)
     {   
         //Klonar shoppingcart, ej referens då shoppingcarten kommer tömmas.
-    	products = (ArrayList<Product>) shoppingCart.clone();
+    	products = (ArrayList<String>) shoppingCart.clone();
     	this.userName = userName;
         dateCreated = new Date(System.currentTimeMillis());
     }
@@ -47,7 +47,7 @@ public final class Order
 		return dateCreated;
 	}
 
-	public ArrayList<Product> getProducts() 
+	public ArrayList<String> getProducts() 
 	{
 		return products;
 	}

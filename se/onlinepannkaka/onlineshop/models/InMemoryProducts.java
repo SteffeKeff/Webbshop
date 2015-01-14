@@ -1,7 +1,6 @@
 package se.onlinepannkaka.onlineshop.models;
 import java.util.HashMap;
 
-import se.onlinepannkaka.onlineshop.Product;
 import se.onlinepannkaka.onlineshop.repositories.ProductRepository;
 
 public class InMemoryProducts implements ProductRepository

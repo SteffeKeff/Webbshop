@@ -1,4 +1,4 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.models;
 import java.util.ArrayList;
 
 public final class Customer extends Account
@@ -27,7 +27,7 @@ public final class Customer extends Account
         this.mobileNumber = mobileNumber;
     }
     
-    public void addProduct(Product product)
+    public void addProduct(String product)
     {
     	if(product != null)
     	{
@@ -43,12 +43,12 @@ public final class Customer extends Account
     	}
     }
     
-    public void removeProduct(Product product)
+    public void removeProduct(String product)
     {
     	shoppingCart.removeProduct(product);
     }
     
-    public ArrayList<Product> getShoppingCart()
+    public ArrayList<String> getShoppingCart()
     {
         return shoppingCart.getProducts();
     }

@@ -1,8 +1,6 @@
 package se.onlinepannkaka.onlineshop.models;
 import java.util.HashMap;
 
-import se.onlinepannkaka.onlineshop.Customer;
-import se.onlinepannkaka.onlineshop.Order;
 import se.onlinepannkaka.onlineshop.repositories.OrderRepository;
 
 public class InMemoryOrders implements OrderRepository
@@ -23,7 +21,7 @@ public class InMemoryOrders implements OrderRepository
 	}
 
 	@Override
-	public HashMap<String, Order> getAllOrders() 
+	public HashMap<String, Order> getOrders() 
 	{
 		return orders;
 	}

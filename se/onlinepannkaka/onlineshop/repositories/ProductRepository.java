@@ -1,7 +1,7 @@
 package se.onlinepannkaka.onlineshop.repositories;
 import java.util.HashMap;
 
-import se.onlinepannkaka.onlineshop.Product;
+import se.onlinepannkaka.onlineshop.models.Product;
 
 public interface ProductRepository 
 {

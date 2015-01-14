@@ -1,4 +1,4 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.models;
 
 public class Product
 {
@@ -48,14 +48,19 @@ public class Product
 		this.img = img;
 	}
 	
-	public void setPrice(int price)
+	public void setPrice(double price)
 	{
 		this.price = price;
 	}
 	
-	public void setQuantity(int quantity)
+	public void raiseQuantity(int raise)
 	{
-		this.quantity = quantity;
+		quantity += raise;
+	}
+	
+	public void decreaseQuantity(int decrease)
+	{
+		quantity -= decrease;
 	}
 	
 	public String getTitle()
