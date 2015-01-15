@@ -54,7 +54,7 @@ public class CustomerTest
 	{
 		cu.addOrder();
 		assertNull(cu.getOrder(0));
-		assertEquals(cu.getOrders(), new ArrayList<Order>());
+		assertEquals(cu.getOrders(), new ArrayList<String>());
 		
 		Product p1 = new Product("Klassisk pannkaka", "Pannkakor" , "Stefan", "Vår klassiska och mycket utsökta pannkaka", "klassiskPannkaka.png", 10.90, 10);		
 		cu.addProduct(p1.getTitle());
@@ -73,7 +73,6 @@ public class CustomerTest
 		assertEquals(pa.size(), 1);
 		
 		cu.addOrder();
-		assertEquals(pa.size(), 0);
 		
 		assertNotNull(cu.getOrder(0));
 		

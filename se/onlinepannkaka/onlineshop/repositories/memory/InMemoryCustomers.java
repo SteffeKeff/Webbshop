@@ -1,6 +1,7 @@
-package se.onlinepannkaka.onlineshop.models;
+package se.onlinepannkaka.onlineshop.repositories.memory;
 import java.util.HashMap;
 
+import se.onlinepannkaka.onlineshop.models.Customer;
 import se.onlinepannkaka.onlineshop.repositories.CustomerRepository;
 
 public class InMemoryCustomers implements CustomerRepository 
@@ -20,7 +21,11 @@ public class InMemoryCustomers implements CustomerRepository
 	@Override
 	public Customer getCustomer(String username) 
 	{
-		return accounts.getOrDefault(username, null);
+		if(accounts.containsKey(username))
+		{
+			return accounts.get(username);
+		}
+		return new Customer("","","","","","",""); //Will return an empty customer to counter nullPointer
 	}
 	
 	@Override

@@ -1,4 +1,4 @@
-package se.onlinepannkaka.onlineshop;
+package se.onlinepannkaka.onlineshop.services;
 import java.util.HashMap;
 
 import se.onlinepannkaka.onlineshop.models.Customer;
@@ -26,6 +26,19 @@ public class ShopService
 	public void addProduct(Product product)
 	{
 		pR.addProduct(product);
+	}
+	
+	public void addProductToCustomer(String title, String username){
+		addProductToCustomer(title,username,1);
+	}
+	
+	public void addProductToCustomer(String title, String username, int amount){
+		if(pR.getProduct(title).getQuantity() >= amount)
+		{
+			for(int i = 0; i < amount; i++){
+				cR.getCustomer(username).addProduct(title);	
+			}
+		}
 	}
 	
 	public Product getProduct(String title)
@@ -59,7 +72,7 @@ public class ShopService
 	
 	public Customer getCustomer(String username)
 	{
-		return cR.getCustomer(username);
+		return cR.getCustomer(username);	
 	}
 	
 	public void updateCustomer(Customer customer)
@@ -74,13 +87,16 @@ public class ShopService
 	
 	public void addOrder(String username)
 	{
-		cR.getCustomer(username).addOrder();
+		//Will decrease the product quantity by one for each item in the shoppingCart
+		for(String title: cR.getCustomer(username).getShoppingCart()){
+			pR.getProduct(title).decreaseQuantity(1);
+		}
 		oR.addOrder(cR.getCustomer(username));
 	}
 	
     public Order getOrder(String key)
-    {
-    	return oR.getOrder(key);
+    {    	
+    	return oR.getOrder(key); 
     }
     
     public HashMap<String,Order> getOrders()

@@ -1,6 +1,7 @@
-package se.onlinepannkaka.onlineshop.models;
+package se.onlinepannkaka.onlineshop.repositories.memory;
 import java.util.HashMap;
 
+import se.onlinepannkaka.onlineshop.models.Product;
 import se.onlinepannkaka.onlineshop.repositories.ProductRepository;
 
 public class InMemoryProducts implements ProductRepository
@@ -20,7 +21,11 @@ public class InMemoryProducts implements ProductRepository
 	@Override
 	public Product getProduct(String title) 
 	{
-		return products.getOrDefault(title,null);
+		if(products.containsKey(title))
+		{
+			return products.get(title);
+		}
+		return new Product("","","","","",0,0); //Will return an empty product to counter nullPointer
 	}
 
 	@Override

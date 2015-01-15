@@ -4,10 +4,10 @@ import java.util.ArrayList;
 public final class Customer extends Account
 {
     private String firstName,
-                        lastName,
-                        address,
-                        mobileNumber;
-    private ArrayList<Order> orders = new ArrayList<Order>();
+    			   lastName,
+                   address,
+                   mobileNumber;
+    private ArrayList<String> orders = new ArrayList<String>();
     private ShoppingCart shoppingCart = new ShoppingCart();
     
     public Customer(
@@ -31,15 +31,7 @@ public final class Customer extends Account
     {
     	if(product != null)
     	{
-    		try
-    		{
-    			shoppingCart.addProduct(product);
-    		}
-    		catch(NullPointerException E)
-    		{
-    			//E.printStackTrace();
-    		};
-    		
+    		shoppingCart.addProduct(product);
     	}
     }
     
@@ -53,16 +45,16 @@ public final class Customer extends Account
         return shoppingCart.getProducts();
     }
     
-    public ArrayList<Order> getOrders()
+    public ArrayList<String> getOrders()
     {
         return orders;
     }
     
     public void addOrder()
     {
-    	if(!shoppingCart.getProducts().isEmpty()){
-    		orders.add(new Order(super.getUsername(), shoppingCart.getProducts()));
-            shoppingCart.clear();
+    	if(!shoppingCart.getProducts().isEmpty())
+    	{
+    		orders.add(super.getUsername().concat(new Integer(orders.size()+1).toString()));
     	}
     }
     
@@ -106,16 +98,12 @@ public final class Customer extends Account
 		this.mobileNumber = mobileNumber;
 	}
 
-	public Order getOrder(int index)
+	public String getOrder(int index)
     {
-		try
-		{
+		if(index >= 0 && index < orders.size()){
 			return orders.get(index);
-		}catch(IndexOutOfBoundsException E)
-		{
-			//E.printStackTrace();
-		};
-		return null;
+		}
+		return "";
     }
 	
 	@Override
